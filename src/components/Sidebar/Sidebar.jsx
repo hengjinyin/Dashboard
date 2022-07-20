@@ -3,7 +3,7 @@ import Logo from "../../img/logo.png"
 import { SidebarData } from "../../data/Data";
 import LogoutIcon from '@mui/icons-material/Logout';
 import MenuIcon from '@mui/icons-material/Menu';
-import { motion, AnimateSharedLayout } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState } from "react";
 
 const Sidebar = () => {
