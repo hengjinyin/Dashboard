@@ -14,26 +14,32 @@ export const SidebarData = [
     {
         icon: HomeIcon,
         heading: "Dashboard",
+        link: "/Home",
     },
     {
         icon: GroupIcon,
-        heading: "Users",
+        heading: "Customers",
+        link: "/Customers",
     },
     {
         icon: InventoryIcon,
-        heading: "Invertory",
+        heading: "Inventory",
+        link: "/Inventory",
     },
     {
         icon: PointOfSaleIcon,
-        heading: "Sale",
+        heading: "Orders",
+        link: "/Orders",
     },
     {
         icon: SettingsIcon,
         heading: "Settings",
+        link: "/Settings",
     },
     {
         icon: LogoutIcon,
         heading: "Sign out",
+        link: "/",
     },
 ]
 
