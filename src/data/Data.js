@@ -6,6 +6,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
+import LogoutIcon from '@mui/icons-material/Logout';
 import img1 from "../img/img1.png";
 import img2 from "../img/img2.png";
 import img3 from "../img/img3.png";
@@ -29,6 +30,10 @@ export const SidebarData = [
     {
         icon: SettingsIcon,
         heading: "Settings",
+    },
+    {
+        icon: LogoutIcon,
+        heading: "Sign out",
     },
 ]
 

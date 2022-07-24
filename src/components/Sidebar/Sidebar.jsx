@@ -1,7 +1,7 @@
 import "./Sidebar.scss"
 import Logo from "../../img/logo.png"
 import { SidebarData } from "../../data/Data";
-import LogoutIcon from '@mui/icons-material/Logout';
+// import LogoutIcon from '@mui/icons-material/Logout';
 import MenuIcon from '@mui/icons-material/Menu';
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -50,12 +50,12 @@ const Sidebar = () => {
               </div>
             )
           })}
-          <div className="menuItem">
+          {/* <div className="menuItem">
             <LogoutIcon />
             <span>
               Sign out
             </span>
-          </div>
+          </div> */}
         </div>
       </motion.div>
     </div>
