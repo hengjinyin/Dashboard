@@ -4,13 +4,31 @@ import { SidebarData } from "../../data/Data";
 // import LogoutIcon from '@mui/icons-material/Logout';
 import MenuIcon from '@mui/icons-material/Menu';
 import { motion } from "framer-motion";
-import { useState } from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = () => {
 
-  const [selected, setSelected] = useState(0);
+  const location = useLocation();
+  const [selected, setSelected] = useState(() => {
+    SidebarData.map((item, index) => {
+      if (item.link.toLowerCase() === location.pathname.toLowerCase()) {
+        return item.index;
+      }
+    })
+  });
   const [expanded, setExpanded] = useState(true);
+
+  useEffect(() => {
+    SidebarData.map((item, index) => {
+      if (item.link.toLowerCase() === location.pathname.toLowerCase()) {
+        setSelected(index);
+        return;
+      }
+    })
+  });
+
+
 
   const handleSidebarOnClick = (item, index) => {
     setSelected(index);
@@ -35,7 +53,7 @@ const Sidebar = () => {
         variants={sidebarVariants}
         animate={window.innerWidth <= 768 ? `${expanded}` : ""}>
         {/* logo */}
-        <Link to="/orders" style={{ textDecoration: "none" }}>
+        <Link to="/dashboard" style={{ textDecoration: "none" }}>
           <div className="logo">
             <img src={Logo} alt="" />
             <span>
@@ -47,10 +65,11 @@ const Sidebar = () => {
         <div className="menu">
           {SidebarData.map((item, index) => {
             return (
-              <Link to={item.link} >
-                <div className={selected === index ? "menuItem active" : "menuItem"}
-                  key={index}
-                  onClick={(item) => handleSidebarOnClick(item, index)}>
+              <Link to={item.link} style={{ textDecoration: "none" }}>
+                <div className={selected === item.index ? "menuItem active" : "menuItem"}
+                  key={item.index}
+                  // onClick={(item) => handleSidebarOnClick(item, index)}>
+                  onClick={() => setSelected(index)}>
                   <item.icon />
                   <span>
                     {item.heading}

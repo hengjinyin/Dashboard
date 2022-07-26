@@ -1,8 +1,11 @@
 import "./Inventory.scss"
+import DefaultLayout from "../../Layout/DefaultLayout"
 
 const Inventory = () => {
   return (
-    <div className='inventory'>Inventory</div>
+    <DefaultLayout>
+      Inventory
+    </DefaultLayout>
   )
 }
 

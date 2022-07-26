@@ -1,8 +1,11 @@
 import "./Customers.scss"
+import DefaultLayout from "../../Layout/DefaultLayout"
 
 const Customers = () => {
   return (
-    <div className="customers">Customers</div>
+    <DefaultLayout>
+      Customers
+    </DefaultLayout>
   )
 }
 
